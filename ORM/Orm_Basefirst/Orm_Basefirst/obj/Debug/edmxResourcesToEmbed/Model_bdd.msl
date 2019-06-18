@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjetBDD2ModelStoreContainer" CdmEntityContainer="Orm_BDDEntities">
+    <EntitySetMapping Name="Aeroports">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Aeroport">
+        <MappingFragment StoreEntitySet="Aeroports">
+          <ScalarProperty Name="CodeAITA" ColumnName="CodeAITA" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avions">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Avion">
+        <MappingFragment StoreEntitySet="Avions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Modele" ColumnName="Modele" />
+          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+          <ScalarProperty Name="NbPlaceBusiness" ColumnName="NbPlaceBusiness" />
+          <ScalarProperty Name="NbPlacePremiere" ColumnName="NbPlacePremiere" />
+          <ScalarProperty Name="NbPlacePremium" ColumnName="NbPlacePremium" />
+          <ScalarProperty Name="NbPlaceEconomique" ColumnName="NbPlaceEconomique" />
+          <ScalarProperty Name="NbPlaceEquipege" ColumnName="NbPlaceEquipege" />
+          <ScalarProperty Name="Proprietaire" ColumnName="Proprietaire" />
+          <ScalarProperty Name="CodeAeroport" ColumnName="CodeAeroport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Baggages">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Baggage">
+        <MappingFragment StoreEntitySet="Baggages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Poids_Kg_" ColumnName="Poids(Kg)" />
+          <ScalarProperty Name="Tarifs" ColumnName="Tarifs" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="IdVoyages" ColumnName="IdVoyages" />
+          <ScalarProperty Name="IdBillet" ColumnName="IdBillet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Billets">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Billet">
+        <MappingFragment StoreEntitySet="Billet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTarifs" ColumnName="IdTarifs" />
+          <ScalarProperty Name="IdVoyages" ColumnName="IdVoyages" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="PrixPendantAchat" ColumnName="PrixPendantAchat" />
+          <ScalarProperty Name="Reduction" ColumnName="Reduction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="DateNaiss" ColumnName="DateNaiss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Embarquements">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Embarquement">
+        <MappingFragment StoreEntitySet="Embarquement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="idVol" ColumnName="idVol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employes">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Employe">
+        <MappingFragment StoreEntitySet="Employes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="DateNaiss" ColumnName="DateNaiss" />
+          <ScalarProperty Name="DateEmbauche" ColumnName="DateEmbauche" />
+          <ScalarProperty Name="PermisVehiculePiste" ColumnName="PermisVehiculePiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidents">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Incident">
+        <MappingFragment StoreEntitySet="Incident">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IndiceGravite" ColumnName="IndiceGravite" />
+          <ScalarProperty Name="Commentaire" ColumnName="Commentaire" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="idEmploye" ColumnName="idEmploye" />
+          <ScalarProperty Name="idAvion" ColumnName="idAvion" />
+          <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maintenances">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Maintenance">
+        <MappingFragment StoreEntitySet="Maintenance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomChefEquipe" ColumnName="NomChefEquipe" />
+          <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+          <ScalarProperty Name="DateDebutPrevue" ColumnName="DateDebutPrevue" />
+          <ScalarProperty Name="DateFinPrevue" ColumnName="DateFinPrevue" />
+          <ScalarProperty Name="DateDebutReelle" ColumnName="DateDebutReelle" />
+          <ScalarProperty Name="DateFinReelle" ColumnName="DateFinReelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Naviguants">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Naviguant">
+        <MappingFragment StoreEntitySet="Naviguant">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomPoste" ColumnName="NomPoste" />
+          <ScalarProperty Name="Pilote" ColumnName="Pilote" />
+          <ScalarProperty Name="CoPilote" ColumnName="CoPilote" />
+          <ScalarProperty Name="Hotesse" ColumnName="Hotesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sols">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Sol">
+        <MappingFragment StoreEntitySet="Sol">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomPoste" ColumnName="NomPoste" />
+          <ScalarProperty Name="CodeAeroport" ColumnName="CodeAeroport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarifs">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Tarif">
+        <MappingFragment StoreEntitySet="Tarifs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeTarif" ColumnName="TypeTarif" />
+          <ScalarProperty Name="Classe" ColumnName="Classe" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="IdVoyages" ColumnName="IdVoyages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vols">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Vol">
+        <MappingFragment StoreEntitySet="Vols">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AeroportDepart" ColumnName="AeroportDepart" />
+          <ScalarProperty Name="AeroportArriveePrevue" ColumnName="AeroportArriveePrevue" />
+          <ScalarProperty Name="AeroportArriveeReel" ColumnName="AeroportArriveeReel" />
+          <ScalarProperty Name="DateDepartPrevue" ColumnName="DateDepartPrevue" />
+          <ScalarProperty Name="DateDepartReel" ColumnName="DateDepartReel" />
+          <ScalarProperty Name="DateArriveePrevue" ColumnName="DateArriveePrevue" />
+          <ScalarProperty Name="DateArriveeReel" ColumnName="DateArriveeReel" />
+          <ScalarProperty Name="ReferenceLigne" ColumnName="ReferenceLigne" />
+          <ScalarProperty Name="ReferenceVol" ColumnName="ReferenceVol" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="TempsVolPrevue_heure_" ColumnName="TempsVolPrevue(heure)" />
+          <ScalarProperty Name="TempsVolReel_heure_" ColumnName="TempsVolReel(heure)" />
+          <ScalarProperty Name="nbEmployee" ColumnName="nbEmployee" />
+          <ScalarProperty Name="NbPlaceRestante" ColumnName="NbPlaceRestante" />
+          <ScalarProperty Name="NbPlaceRestanteBusiness" ColumnName="NbPlaceRestanteBusiness" />
+          <ScalarProperty Name="NbPlaceRestantePremiere" ColumnName="NbPlaceRestantePremiere" />
+          <ScalarProperty Name="NbPlaceRestantePremium" ColumnName="NbPlaceRestantePremium" />
+          <ScalarProperty Name="NbPlaceRestanteEconomique" ColumnName="NbPlaceRestanteEconomique" />
+          <ScalarProperty Name="idPilote" ColumnName="idPilote" />
+          <ScalarProperty Name="idCopilote" ColumnName="idCopilote" />
+          <ScalarProperty Name="idHotesse" ColumnName="idHotesse" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voyages">
+      <EntityTypeMapping TypeName="ProjetBDD2Model.Voyage">
+        <MappingFragment StoreEntitySet="Voyages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="IdAvions" ColumnName="IdAvions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="VolVoyages" TypeName="ProjetBDD2Model.VolVoyages" StoreEntitySet="VolVoyages">
+      <EndProperty Name="Vols">
+        <ScalarProperty Name="Id" ColumnName="IdVol" />
+      </EndProperty>
+      <EndProperty Name="Voyages">
+        <ScalarProperty Name="Id" ColumnName="idVoyage" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

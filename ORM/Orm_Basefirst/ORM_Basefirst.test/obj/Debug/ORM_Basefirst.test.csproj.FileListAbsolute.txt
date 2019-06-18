@@ -1,0 +1,17 @@
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\ORM_Basefirst.test.exe.config
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\ORM_Basefirst.test.exe
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\ORM_Basefirst.test.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\EntityFramework.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\Orm_Basefirst.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\Orm_Basefirst.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\Orm_Basefirst.dll.config
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\EntityFramework.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\fr\EntityFramework.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\obj\Debug\ORM_Basefirst.test.csprojAssemblyReference.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\obj\Debug\ORM_Basefirst.test.csproj.CoreCompileInputs.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\obj\Debug\ORM_Basefirst.test.csproj.CopyComplete
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\obj\Debug\ORM_Basefirst.test.exe
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm_Basefirst\ORM_Basefirst.test\obj\Debug\ORM_Basefirst.test.pdb

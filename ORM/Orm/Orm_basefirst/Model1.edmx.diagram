@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7274e19e4b12415c86ca4fcce41e103a" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjetBDD2Model.Aeroport" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Avion" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Baggage" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Billet" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Client" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Embarquement" Width="1.5" PointX="12.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Employe" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Incident" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Maintenance" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Naviguant" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Sol" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Tarif" Width="1.5" PointX="10.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Vol" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetBDD2Model.Voyage" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Avions_Aeroports" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Sol_Aeroports" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Incident_Avions" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Voyages_Avions" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Baggages_Billet" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Baggages_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Baggages_Voyages" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Billet_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Billet_Tarifs" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Billet_Voyages" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Embarquement_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Incident_Employes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Maintenance_Employes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Naviguant_Employes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Sol_Employes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Incident_Maintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.FK_Tarifs_Voyages" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetBDD2Model.VolVoyages" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

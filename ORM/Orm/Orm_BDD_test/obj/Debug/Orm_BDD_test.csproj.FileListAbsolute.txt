@@ -1,0 +1,17 @@
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_BDD_test.exe.config
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_BDD_test.exe
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_BDD_test.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\EntityFramework.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\EntityFramework.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\fr\EntityFramework.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\obj\Debug\Orm_BDD_test.csprojAssemblyReference.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\obj\Debug\Orm_BDD_test.csproj.CoreCompileInputs.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\obj\Debug\Orm_BDD_test.csproj.CopyComplete
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\obj\Debug\Orm_BDD_test.exe
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\obj\Debug\Orm_BDD_test.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_basefirst.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_basefirst.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm_BDD_test\bin\Debug\Orm_basefirst.dll.config

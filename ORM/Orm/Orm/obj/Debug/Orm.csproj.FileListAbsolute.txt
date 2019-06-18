@@ -1,0 +1,14 @@
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\Orm.dll.config
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\Orm.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\Orm.pdb
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\EntityFramework.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\EntityFramework.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\fr\EntityFramework.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\obj\Debug\Orm.csprojAssemblyReference.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\obj\Debug\Orm.csproj.CoreCompileInputs.cache
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\obj\Debug\Orm.csproj.CopyComplete
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\obj\Debug\Orm.dll
+D:\Cours_Epsi\CoursB2\Projets\BDD\ORM\Orm\Orm\obj\Debug\Orm.pdb

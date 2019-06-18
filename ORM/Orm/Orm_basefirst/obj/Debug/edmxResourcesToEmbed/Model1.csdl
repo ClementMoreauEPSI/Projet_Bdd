@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjetBDD2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aeroport">
+    <Key>
+      <PropertyRef Name="CodeAITA" />
+    </Key>
+    <Property Name="CodeAITA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pays" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Avions" Relationship="Self.FK_Avions_Aeroports" FromRole="Aeroports" ToRole="Avions" />
+    <NavigationProperty Name="Sols" Relationship="Self.FK_Sol_Aeroports" FromRole="Aeroports" ToRole="Sol" />
+  </EntityType>
+  <EntityType Name="Avion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modele" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Disponible" Type="Boolean" Nullable="false" />
+    <Property Name="NbPlaceBusiness" Type="Int32" />
+    <Property Name="NbPlacePremiere" Type="Int32" />
+    <Property Name="NbPlacePremium" Type="Int32" />
+    <Property Name="NbPlaceEconomique" Type="Int32" />
+    <Property Name="NbPlaceEquipege" Type="Int32" />
+    <Property Name="Proprietaire" Type="Boolean" Nullable="false" />
+    <Property Name="CodeAeroport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Aeroport" Relationship="Self.FK_Avions_Aeroports" FromRole="Avions" ToRole="Aeroports" />
+    <NavigationProperty Name="Incidents" Relationship="Self.FK_Incident_Avions" FromRole="Avions" ToRole="Incident" />
+    <NavigationProperty Name="Voyages" Relationship="Self.FK_Voyages_Avions" FromRole="Avions" ToRole="Voyages" />
+  </EntityType>
+  <EntityType Name="Baggage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Poids_Kg_" Type="Double" Nullable="false" />
+    <Property Name="Tarifs" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="IdClient" Type="Int64" Nullable="false" />
+    <Property Name="IdVoyages" Type="Int64" Nullable="false" />
+    <Property Name="IdBillet" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Billet" Relationship="Self.FK_Baggages_Billet" FromRole="Baggages" ToRole="Billet" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Baggages_Clients" FromRole="Baggages" ToRole="Clients" />
+    <NavigationProperty Name="Voyage" Relationship="Self.FK_Baggages_Voyages" FromRole="Baggages" ToRole="Voyages" />
+  </EntityType>
+  <EntityType Name="Billet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTarifs" Type="Int32" Nullable="false" />
+    <Property Name="IdVoyages" Type="Int64" Nullable="false" />
+    <Property Name="IdClient" Type="Int64" Nullable="false" />
+    <Property Name="PrixPendantAchat" Type="Int32" Nullable="false" />
+    <Property Name="Reduction" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Baggages" Relationship="Self.FK_Baggages_Billet" FromRole="Billet" ToRole="Baggages" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Billet_Clients" FromRole="Billet" ToRole="Clients" />
+    <NavigationProperty Name="Tarif" Relationship="Self.FK_Billet_Tarifs" FromRole="Billet" ToRole="Tarifs" />
+    <NavigationProperty Name="Voyage" Relationship="Self.FK_Billet_Voyages" FromRole="Billet" ToRole="Voyages" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateNaiss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Baggages" Relationship="Self.FK_Baggages_Clients" FromRole="Clients" ToRole="Baggages" />
+    <NavigationProperty Name="Billets" Relationship="Self.FK_Billet_Clients" FromRole="Clients" ToRole="Billet" />
+    <NavigationProperty Name="Embarquements" Relationship="Self.FK_Embarquement_Clients" FromRole="Clients" ToRole="Embarquement" />
+  </EntityType>
+  <EntityType Name="Embarquement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int64" Nullable="false" />
+    <Property Name="idVol" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Embarquement_Clients" FromRole="Embarquement" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateNaiss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateEmbauche" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PermisVehiculePiste" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Incidents" Relationship="Self.FK_Incident_Employes" FromRole="Employes" ToRole="Incident" />
+    <NavigationProperty Name="Maintenances" Relationship="Self.FK_Maintenance_Employes" FromRole="Employes" ToRole="Maintenance" />
+    <NavigationProperty Name="Naviguant" Relationship="Self.FK_Naviguant_Employes" FromRole="Employes" ToRole="Naviguant" />
+    <NavigationProperty Name="Sol" Relationship="Self.FK_Sol_Employes" FromRole="Employes" ToRole="Sol" />
+  </EntityType>
+  <EntityType Name="Incident">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndiceGravite" Type="Int32" Nullable="false" />
+    <Property Name="Commentaire" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="idEmploye" Type="Int64" Nullable="false" />
+    <Property Name="idAvion" Type="Int64" Nullable="false" />
+    <Property Name="IdMaintenance" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Avion" Relationship="Self.FK_Incident_Avions" FromRole="Incident" ToRole="Avions" />
+    <NavigationProperty Name="Employe" Relationship="Self.FK_Incident_Employes" FromRole="Incident" ToRole="Employes" />
+    <NavigationProperty Name="Maintenance" Relationship="Self.FK_Incident_Maintenance" FromRole="Incident" ToRole="Maintenance" />
+  </EntityType>
+  <EntityType Name="Maintenance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomChefEquipe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idEmployee" Type="Int64" Nullable="false" />
+    <Property Name="DateDebutPrevue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinPrevue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDebutReelle" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinReelle" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employe" Relationship="Self.FK_Maintenance_Employes" FromRole="Maintenance" ToRole="Employes" />
+    <NavigationProperty Name="Incidents" Relationship="Self.FK_Incident_Maintenance" FromRole="Maintenance" ToRole="Incident" />
+  </EntityType>
+  <EntityType Name="Naviguant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomPoste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pilote" Type="Boolean" Nullable="false" />
+    <Property Name="CoPilote" Type="Boolean" Nullable="false" />
+    <Property Name="Hotesse" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employe" Relationship="Self.FK_Naviguant_Employes" FromRole="Naviguant" ToRole="Employes" />
+  </EntityType>
+  <EntityType Name="Sol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomPoste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeAeroport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Aeroport" Relationship="Self.FK_Sol_Aeroports" FromRole="Sol" ToRole="Aeroports" />
+    <NavigationProperty Name="Employe" Relationship="Self.FK_Sol_Employes" FromRole="Sol" ToRole="Employes" />
+  </EntityType>
+  <EntityType Name="Tarif">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeTarif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Classe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prix" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="IdVoyages" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Billets" Relationship="Self.FK_Billet_Tarifs" FromRole="Tarifs" ToRole="Billet" />
+    <NavigationProperty Name="Voyage" Relationship="Self.FK_Tarifs_Voyages" FromRole="Tarifs" ToRole="Voyages" />
+  </EntityType>
+  <EntityType Name="Vol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AeroportDepart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AeroportArriveePrevue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AeroportArriveeReel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateDepartPrevue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDepartReel" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateArriveePrevue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateArriveeReel" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReferenceLigne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReferenceVol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Distance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TempsVolPrevue_heure_" Type="Time" Precision="7" />
+    <Property Name="TempsVolReel_heure_" Type="Time" Precision="7" />
+    <Property Name="nbEmployee" Type="Int32" Nullable="false" />
+    <Property Name="NbPlaceRestante" Type="Int32" Nullable="false" />
+    <Property Name="NbPlaceRestanteBusiness" Type="Int32" Nullable="false" />
+    <Property Name="NbPlaceRestantePremiere" Type="Int32" Nullable="false" />
+    <Property Name="NbPlaceRestantePremium" Type="Int32" Nullable="false" />
+    <Property Name="NbPlaceRestanteEconomique" Type="Int32" Nullable="false" />
+    <Property Name="idPilote" Type="Int64" />
+    <Property Name="idCopilote" Type="Int64" />
+    <Property Name="idHotesse" Type="Int64" />
+    <Property Name="Pret" Type="Boolean" />
+    <NavigationProperty Name="Voyages" Relationship="Self.VolVoyages" FromRole="Vols" ToRole="Voyages" />
+  </EntityType>
+  <EntityType Name="Voyage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdAvions" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Avion" Relationship="Self.FK_Voyages_Avions" FromRole="Voyages" ToRole="Avions" />
+    <NavigationProperty Name="Baggages" Relationship="Self.FK_Baggages_Voyages" FromRole="Voyages" ToRole="Baggages" />
+    <NavigationProperty Name="Billets" Relationship="Self.FK_Billet_Voyages" FromRole="Voyages" ToRole="Billet" />
+    <NavigationProperty Name="Tarifs" Relationship="Self.FK_Tarifs_Voyages" FromRole="Voyages" ToRole="Tarifs" />
+    <NavigationProperty Name="Vols" Relationship="Self.VolVoyages" FromRole="Voyages" ToRole="Vols" />
+  </EntityType>
+  <Association Name="FK_Avions_Aeroports">
+    <End Role="Aeroports" Type="Self.Aeroport" Multiplicity="0..1" />
+    <End Role="Avions" Type="Self.Avion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aeroports">
+        <PropertyRef Name="CodeAITA" />
+      </Principal>
+      <Dependent Role="Avions">
+        <PropertyRef Name="CodeAeroport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sol_Aeroports">
+    <End Role="Aeroports" Type="Self.Aeroport" Multiplicity="1" />
+    <End Role="Sol" Type="Self.Sol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aeroports">
+        <PropertyRef Name="CodeAITA" />
+      </Principal>
+      <Dependent Role="Sol">
+        <PropertyRef Name="CodeAeroport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incident_Avions">
+    <End Role="Avions" Type="Self.Avion" Multiplicity="1" />
+    <End Role="Incident" Type="Self.Incident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="idAvion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voyages_Avions">
+    <End Role="Avions" Type="Self.Avion" Multiplicity="1" />
+    <End Role="Voyages" Type="Self.Voyage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voyages">
+        <PropertyRef Name="IdAvions" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Baggages_Billet">
+    <End Role="Billet" Type="Self.Billet" Multiplicity="1" />
+    <End Role="Baggages" Type="Self.Baggage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Billet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Baggages">
+        <PropertyRef Name="IdBillet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Baggages_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Baggages" Type="Self.Baggage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Baggages">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Baggages_Voyages">
+    <End Role="Voyages" Type="Self.Voyage" Multiplicity="1" />
+    <End Role="Baggages" Type="Self.Baggage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voyages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Baggages">
+        <PropertyRef Name="IdVoyages" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billet_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Billet" Type="Self.Billet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billet">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billet_Tarifs">
+    <End Role="Tarifs" Type="Self.Tarif" Multiplicity="1" />
+    <End Role="Billet" Type="Self.Billet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarifs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billet">
+        <PropertyRef Name="IdTarifs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billet_Voyages">
+    <End Role="Voyages" Type="Self.Voyage" Multiplicity="1" />
+    <End Role="Billet" Type="Self.Billet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voyages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billet">
+        <PropertyRef Name="IdVoyages" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Embarquement_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Embarquement" Type="Self.Embarquement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Embarquement">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incident_Employes">
+    <End Role="Employes" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Incident" Type="Self.Incident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="idEmploye" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maintenance_Employes">
+    <End Role="Employes" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Maintenance">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Naviguant_Employes">
+    <End Role="Employes" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Naviguant" Type="Self.Naviguant" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Naviguant">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sol_Employes">
+    <End Role="Employes" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Sol" Type="Self.Sol" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sol">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incident_Maintenance">
+    <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="1" />
+    <End Role="Incident" Type="Self.Incident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maintenance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="IdMaintenance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarifs_Voyages">
+    <End Role="Voyages" Type="Self.Voyage" Multiplicity="1" />
+    <End Role="Tarifs" Type="Self.Tarif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voyages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tarifs">
+        <PropertyRef Name="IdVoyages" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VolVoyages">
+    <End Role="Vols" Type="Self.Vol" Multiplicity="*" />
+    <End Role="Voyages" Type="Self.Voyage" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ProjetBDD2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aeroports" EntityType="Self.Aeroport" />
+    <EntitySet Name="Avions" EntityType="Self.Avion" />
+    <EntitySet Name="Baggages" EntityType="Self.Baggage" />
+    <EntitySet Name="Billets" EntityType="Self.Billet" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Embarquements" EntityType="Self.Embarquement" />
+    <EntitySet Name="Employes" EntityType="Self.Employe" />
+    <EntitySet Name="Incidents" EntityType="Self.Incident" />
+    <EntitySet Name="Maintenances" EntityType="Self.Maintenance" />
+    <EntitySet Name="Naviguants" EntityType="Self.Naviguant" />
+    <EntitySet Name="Sols" EntityType="Self.Sol" />
+    <EntitySet Name="Tarifs" EntityType="Self.Tarif" />
+    <EntitySet Name="Vols" EntityType="Self.Vol" />
+    <EntitySet Name="Voyages" EntityType="Self.Voyage" />
+    <AssociationSet Name="FK_Avions_Aeroports" Association="Self.FK_Avions_Aeroports">
+      <End Role="Aeroports" EntitySet="Aeroports" />
+      <End Role="Avions" EntitySet="Avions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sol_Aeroports" Association="Self.FK_Sol_Aeroports">
+      <End Role="Aeroports" EntitySet="Aeroports" />
+      <End Role="Sol" EntitySet="Sols" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incident_Avions" Association="Self.FK_Incident_Avions">
+      <End Role="Avions" EntitySet="Avions" />
+      <End Role="Incident" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voyages_Avions" Association="Self.FK_Voyages_Avions">
+      <End Role="Avions" EntitySet="Avions" />
+      <End Role="Voyages" EntitySet="Voyages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Baggages_Billet" Association="Self.FK_Baggages_Billet">
+      <End Role="Billet" EntitySet="Billets" />
+      <End Role="Baggages" EntitySet="Baggages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Baggages_Clients" Association="Self.FK_Baggages_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Baggages" EntitySet="Baggages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Baggages_Voyages" Association="Self.FK_Baggages_Voyages">
+      <End Role="Voyages" EntitySet="Voyages" />
+      <End Role="Baggages" EntitySet="Baggages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billet_Clients" Association="Self.FK_Billet_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Billet" EntitySet="Billets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billet_Tarifs" Association="Self.FK_Billet_Tarifs">
+      <End Role="Tarifs" EntitySet="Tarifs" />
+      <End Role="Billet" EntitySet="Billets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billet_Voyages" Association="Self.FK_Billet_Voyages">
+      <End Role="Voyages" EntitySet="Voyages" />
+      <End Role="Billet" EntitySet="Billets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Embarquement_Clients" Association="Self.FK_Embarquement_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Embarquement" EntitySet="Embarquements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incident_Employes" Association="Self.FK_Incident_Employes">
+      <End Role="Employes" EntitySet="Employes" />
+      <End Role="Incident" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maintenance_Employes" Association="Self.FK_Maintenance_Employes">
+      <End Role="Employes" EntitySet="Employes" />
+      <End Role="Maintenance" EntitySet="Maintenances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Naviguant_Employes" Association="Self.FK_Naviguant_Employes">
+      <End Role="Employes" EntitySet="Employes" />
+      <End Role="Naviguant" EntitySet="Naviguants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sol_Employes" Association="Self.FK_Sol_Employes">
+      <End Role="Employes" EntitySet="Employes" />
+      <End Role="Sol" EntitySet="Sols" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incident_Maintenance" Association="Self.FK_Incident_Maintenance">
+      <End Role="Maintenance" EntitySet="Maintenances" />
+      <End Role="Incident" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarifs_Voyages" Association="Self.FK_Tarifs_Voyages">
+      <End Role="Voyages" EntitySet="Voyages" />
+      <End Role="Tarifs" EntitySet="Tarifs" />
+    </AssociationSet>
+    <AssociationSet Name="VolVoyages" Association="Self.VolVoyages">
+      <End Role="Vols" EntitySet="Vols" />
+      <End Role="Voyages" EntitySet="Voyages" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
